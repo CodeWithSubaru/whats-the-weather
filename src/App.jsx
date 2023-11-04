@@ -86,7 +86,7 @@ function App() {
             placeholder="Search..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            onSelect={(e) => setQuery(e.target.value)}
+            onSelect={(e: EventTarget) => setQuery(e.target.value)}
           />
 
           <button

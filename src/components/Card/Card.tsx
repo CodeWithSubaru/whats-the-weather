@@ -42,10 +42,10 @@ export const CardTemperature = styled.p`
 
 export const Flex = styled.div`
   display: flex;
-  justify-content: ${({ justify }) => justify};
-  align-items: ${({ items }) => items};
-  flex-direction: ${({ direction }) => direction};
-  gap: ${({ gap }) => gap};
-  row-gap: ${({ rowGap }) => rowGap};
-  column-gap: ${({ colGap }) => colGap};
+  justify-content: ${(props: any) => props.justify};
+  align-items: ${(props: any) => props.items};
+  flex-direction: ${({ direction }: any) => direction};
+  gap: ${({ gap }: any) => gap};
+  row-gap: ${({ rowGap }: any) => rowGap};
+  column-gap: ${({ colGap }: any) => colGap};
 `;

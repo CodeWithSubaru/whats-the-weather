@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { formatTimeTo12Hour } from "./utils/helper";
 import {
   Card,
   CardFooter,

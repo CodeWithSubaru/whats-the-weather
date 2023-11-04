@@ -18,14 +18,8 @@ import Wind from "/image/wind.png";
 import Humidity from "/image/humidity.png";
 import Search from "/image/search.png";
 
-interface Data {
-  name: "";
-  main: { temp: number; humidity: null };
-  wind: { speed: null };
-}
-
 function App() {
-  const [data, setData] = useState<Data>({
+  const [data, setData] = useState({
     name: "",
     main: { temp: 0, humidity: null },
     wind: { speed: null },
@@ -38,7 +32,7 @@ function App() {
   const API_KEY = `31c241d2a76e9d1067f848044c37c9f6`;
   const URL = `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${API_KEY}`;
 
-  const getIcon = (weather: string) => {
+  const getIcon = (weather) => {
     switch (weather) {
       case "Clouds":
         return setIcon(Cloud);
@@ -65,7 +59,7 @@ function App() {
       getIcon(data.weather[0].main);
       setData(data);
       return setStatus("success");
-    } catch (e: any) {
+    } catch (e) {
       setStatus("error");
       if (!query) return setStatus("customError");
       console.log("Error: ", e.message);
@@ -86,7 +80,7 @@ function App() {
             placeholder="Search..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            onSelect={(e: EventTarget) => setQuery(e.target.value)}
+            onSelect={(e) => setQuery(e.target.value)}
           />
 
           <button
